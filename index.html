@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astravo Holdings Limited | 連結環球商機 貿易無遠弗屆</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f2540',      // 深海藍
+                            deep: '#091a2e',
+                            primary: '#1e4e8c',
+                            accent: '#c9a227',     // 貿易金
+                            gold: '#e3c567',
+                            light: '#f5f8fc'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-serif { font-family: 'Noto Serif TC', serif; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .glass-nav {
+            background: rgba(9, 26, 46, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(9, 26, 46, 0.8), rgba(9, 26, 46, 0.6)), url('https://picsum.photos/id/440/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(15, 37, 64, 0.25);
+        }
+
+        .map-bg {
+            background-image: linear-gradient(rgba(9, 26, 46, 0.92), rgba(9, 26, 46, 0.85)), url('https://picsum.photos/id/870/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-700 antialiased overflow-x-hidden">
+
+    <!-- 頂部公告 -->
+    <div class="bg-brand-deep text-brand-gold text-xs py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <span><i class="fas fa-ship mr-2"></i>環球貨運報告：亞歐海運運價連續三週回升，建議客戶提前兩週訂艙鎖價。</span>
+            <span class="hidden md:block">貿易專線：85059141</span>
+        </div>
+    </div>
+
+    <!-- 導航 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 top-8">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-brand-accent to-brand-gold rounded-lg flex items-center justify-center text-brand-deep text-xl shadow-lg">
+                    <i class="fas fa-earth-asia"></i>
+                </div>
+                <div class="text-white">
+                    <h1 class="font-serif font-bold text-lg leading-tight">Astravo Holdings</h1>
+                    <p class="text-[10px] tracking-[0.3em] text-brand-gold uppercase">Import &amp; Export</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-white text-sm font-medium">
+                <a href="#home" class="hover:text-brand-gold transition">首頁</a>
+                <a href="#about" class="hover:text-brand-gold transition">關於我們</a>
+                <a href="#services" class="hover:text-brand-gold transition">貿易服務</a>
+                <a href="#routes" class="hover:text-brand-gold transition">環球網絡</a>
+                <a href="#process" class="hover:text-brand-gold transition">貿易流程</a>
+                <a href="#contact" class="hover:text-brand-gold transition">聯絡我們</a>
+            </div>
+
+            <a href="#contact" class="hidden md:inline-block px-6 py-2.5 border-2 border-brand-gold text-brand-gold font-bold rounded-full hover:bg-brand-gold hover:text-brand-deep transition duration-300 text-sm">
+                免費報價
+            </a>
+
+            <button class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="hero-bg h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/25"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white mt-16">
+            <span class="inline-block py-1 px-4 border border-brand-gold/60 rounded-full text-brand-gold text-sm mb-6 tracking-[0.3em] reveal">GLOBAL TRADE · SINCE 2005</span>
+            <h2 class="font-serif text-5xl md:text-7xl font-black mb-6 leading-tight reveal" style="transition-delay: 100ms;">
+                從東方之珠，<br><span class="text-brand-gold">通向世界每一處。</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">
+                Astravo Holdings Limited 深耕進出口貿易二十載，立足香港自由港，為全球客戶提供採購、驗貨、物流及清關的一站式貿易服務。
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+                <a href="#services" class="px-8 py-4 bg-brand-gold text-brand-deep font-bold rounded-lg hover:bg-amber-500 transition shadow-lg shadow-amber-500/30">
+                    探索貿易服務 <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg font-bold hover:bg-white/20 transition">
+                    詢盤報價
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- 數據統計 -->
+    <section class="py-10 bg-white relative -mt-10 z-20 shadow-xl rounded-t-3xl mx-4 md:mx-10">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+            <div class="reveal">
+                <div class="font-serif text-4xl font-bold text-brand-dark mb-2 counter" data-target="20">0</div>
+                <div class="text-gray-500 text-sm">年國際貿易經驗</div>
+            </div>
+            <div class="reveal" style="transition-delay: 100ms;">
+                <div class="font-serif text-4xl font-bold text-brand-accent mb-2 counter" data-target="45">0</div>
+                <div class="text-gray-500 text-sm">個貿易夥伴國家</div>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="font-serif text-4xl font-bold text-brand-dark mb-2">$<span class="counter" data-target="800">0</span>M</div>
+                <div class="text-gray-500 text-sm">年度貿易總額</div>
+            </div>
+            <div class="reveal" style="transition-delay: 300ms;">
+                <div class="font-serif text-4xl font-bold text-brand-accent mb-2 counter" data-target="500">0</div>
+                <div class="text-gray-500 text-sm">位長期合作客戶 (+)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative reveal">
+                    <img src="https://picsum.photos/id/1067/800/600" alt="港口貨櫃" class="rounded-2xl shadow-2xl z-10 relative">
+                    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-accent/15 rounded-full z-0 blur-3xl"></div>
+                    <div class="absolute -top-10 -left-10 w-48 h-48 bg-brand-gold/20 rounded-full z-0 blur-3xl"></div>
+                    <div class="absolute bottom-6 left-6 bg-brand-deep text-white px-6 py-4 rounded-xl shadow-xl">
+                        <p class="font-serif text-2xl font-bold text-brand-gold">60+</p>
+                        <p class="text-xs text-gray-300">國家及地區出口覆蓋</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal">
+                    <h3 class="text-brand-accent font-bold tracking-[0.3em] uppercase mb-3">關於Astravo Holdings Limited</h3>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mb-6 leading-snug">以信譽為船，<br>以專業為帆</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Astravo Holdings Limited，總部位於香港，是一家綜合性進出口貿易公司，業務涵蓋電子、家居、建材及消費品等多個領域。
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        我們擁有自置倉庫逾 50,000 平方呎，並與全球 200 多家工廠建立長期合作關係。從產品開發、品質檢驗到國際物流，全程由專人專責跟進。
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-accent mr-3"></i> 香港貿易發展局會員企業</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-accent mr-3"></i> ISO 9001 品質管理認證</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-brand-accent mr-3"></i> 提供 L/C、T/T 多元結算方案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 貿易服務 -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-accent font-bold tracking-[0.3em]">OUR SERVICES</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">一站式貿易服務</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">從供應商開發到送達客戶手中，每個環節皆可放心託付。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-magnifying-glass-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">全球採購代理</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        為客戶開發及審核優質供應商，進行價格談判與合約管理，採購成本平均節省 15%。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">驗貨與品質控制</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        駐廠品檢團隊執行 AQL 抽驗、生產中檢及出貨前檢驗，確保產品符合國際標準。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">國際物流安排</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        海運、空運及快遞多式聯運，與全球頂尖船公司及航空公司簽訂優惠合約運價。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-file-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">清關與文件處理</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        處理產地證、海關申報及各類貿易單證，熟練各國進口法規，通關零延誤。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-light rounded-2xl border border-gray-100 transition-all duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">倉儲與分揀</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        香港自置保稅倉庫，提供併櫃、貼標、包裝及本地派送等增值服務。
+                    </p>
+                    <a href="#contact" class="text-brand-primary text-sm font-semibold hover:underline">了解更多 &rarr;</a>
+                </div>
+
+                <div class="card-hover p-8 bg-brand-dark rounded-2xl transition-all duration-300 reveal text-white" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-gold/20 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">訂造貿易方案</h3>
+                    <p class="text-gray-200 text-sm leading-relaxed mb-4">
+                        大宗商品、特殊監管品或新市場開拓？我們的資深貿易經理為您度身訂造專屬方案。
+                    </p>
+                    <a href="#contact" class="text-brand-gold text-sm font-semibold hover:underline">諮詢專員 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 環球網絡 -->
+    <section id="routes" class="py-20 map-bg text-white relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-gold font-bold tracking-[0.3em]">GLOBAL NETWORK</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mt-3 mb-4">環球貿易網絡</h2>
+                <p class="text-gray-300 max-w-xl mx-auto">六大區域辦事處，24 小時接力服務全球客戶。</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">香港</h4>
+                    <p class="text-gray-300 text-xs">總部 · 亞太樞紐</p>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal" style="transition-delay: 100ms;">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">深圳</h4>
+                    <p class="text-gray-300 text-xs">華南採購中心</p>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal" style="transition-delay: 200ms;">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">上海</h4>
+                    <p class="text-gray-300 text-xs">華東貿易樞紐</p>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal" style="transition-delay: 300ms;">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">新加坡</h4>
+                    <p class="text-gray-300 text-xs">東南亞營運中心</p>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal" style="transition-delay: 400ms;">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">杜拜</h4>
+                    <p class="text-gray-300 text-xs">中東市場拓展</p>
+                </div>
+                <div class="text-center p-6 bg-white/5 rounded-2xl border border-white/10 reveal" style="transition-delay: 500ms;">
+                    <i class="fas fa-map-pin text-3xl text-brand-gold mb-3"></i>
+                    <h4 class="font-bold mb-1">漢堡</h4>
+                    <p class="text-gray-300 text-xs">歐洲客戶服務</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 貿易流程 -->
+    <section id="process" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-serif text-3xl font-bold text-brand-dark">標準貿易流程</h2>
+                <p class="text-gray-500 mt-2">五步完成一筆國際貿易</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                <div class="hidden md:block absolute top-12 left-[8%] right-[8%] h-0.5 bg-amber-200"></div>
+
+                <div class="text-center reveal">
+                    <div class="w-24 h-24 bg-brand-light mx-auto rounded-full flex items-center justify-center border-4 border-brand-gold shadow-lg mb-6">
+                        <i class="fas fa-envelope-open-text text-3xl text-brand-accent"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">1. 詢盤報價</h4>
+                    <p class="text-gray-500 text-sm px-4">24 小時內回覆詢價，提供詳細報價單。</p>
+                </div>
+
+                <div class="text-center reveal" style="transition-delay: 100ms;">
+                    <div class="w-24 h-24 bg-brand-light mx-auto rounded-full flex items-center justify-center border-4 border-brand-gold shadow-lg mb-6">
+                        <i class="fas fa-file-contract text-3xl text-brand-accent"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">2. 簽訂合約</h4>
+                    <p class="text-gray-500 text-sm px-4">確認品質標準、交期及貿易條款（Incoterms）。</p>
+                </div>
+
+                <div class="text-center reveal" style="transition-delay: 200ms;">
+                    <div class="w-24 h-24 bg-brand-light mx-auto rounded-full flex items-center justify-center border-4 border-brand-gold shadow-lg mb-6">
+                        <i class="fas fa-industry text-3xl text-brand-accent"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">3. 生產跟進</h4>
+                    <p class="text-gray-500 text-sm px-4">駐廠跟單，生產進度每週書面匯報。</p>
+                </div>
+
+                <div class="text-center reveal" style="transition-delay: 300ms;">
+                    <div class="w-24 h-24 bg-brand-light mx-auto rounded-full flex items-center justify-center border-4 border-brand-gold shadow-lg mb-6">
+                        <i class="fas fa-clipboard-check text-3xl text-brand-accent"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">4. 驗貨裝運</h4>
+                    <p class="text-gray-500 text-sm px-4">出貨前檢驗，安排訂艙及裝櫃上船。</p>
+                </div>
+
+                <div class="text-center reveal" style="transition-delay: 400ms;">
+                    <div class="w-24 h-24 bg-brand-deep mx-auto rounded-full flex items-center justify-center border-4 border-brand-gold shadow-lg mb-6">
+                        <i class="fas fa-hand-holding-dollar text-3xl text-brand-gold"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">5. 結匯交付</h4>
+                    <p class="text-gray-500 text-sm px-4">單據結匯，貨物送達客戶指定倉庫。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客戶心聲 -->
+    <section id="testimonials" class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-accent font-bold tracking-[0.3em]">TESTIMONIALS</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">客戶的信任與肯定</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">跨越四大洲的信任，是我們最大的成就。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 reveal">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-gold rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">陳</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">陳先生</h4>
+                            <p class="text-brand-primary text-sm">英國連鎖超市採購總監</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        合作五年從未延誤過一個貨櫃，驗貨標準嚴格得來專業，是我們最可靠的亞洲夥伴。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 reveal" style="transition-delay: 100ms;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-gold rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">陳</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Ms. Chen</h4>
+                            <p class="text-brand-primary text-sm">美國家居品牌創辦人</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        採購團隊幫我們談到理想價位，整體成本節省約兩成，品質卻一點也沒有妥協。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-brand-primary to-brand-gold rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">黃</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">黃先生</h4>
+                            <p class="text-brand-primary text-sm">中東電子產品進口商</p>
+                        </div>
+                    </div>
+                    <div class="text-amber-400 text-sm mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        清關文件準備得又快又齊全，貨物從未在海關滯留，省卻我們大量麻煩。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 增值貿易服務 -->
+    <section id="value" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-brand-accent font-bold tracking-[0.3em]">VALUE-ADDED SERVICES</span>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-dark mt-3 mb-4">增值貿易服務</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">不止買賣貨物，更助您開拓市場。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-brand-light rounded-2xl border border-gray-100 p-6 text-center reveal">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-pen-ruler"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">產品設計支援</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">ODM/OEM 開發協調，包裝設計及改良建議，讓產品更具競爭力。</p>
+                </div>
+
+                <div class="bg-brand-light rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">市場調研報告</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">目標市場分析及競品調查，助您制定進軍海外市場的策略。</p>
+                </div>
+
+                <div class="bg-brand-light rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">貿易融資協助</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">協調銀行信用證、押匯及供應鏈融資，紓緩資金周轉壓力。</p>
+                </div>
+
+                <div class="bg-brand-light rounded-2xl border border-gray-100 p-6 text-center reveal" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-display"></i>
+                    </div>
+                    <h4 class="font-bold mb-2 text-gray-800">展會代參服務</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">代表您出席環球資源及廣交會等展會，開發新客戶並現場跟進。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品質承諾 -->
+    <section class="py-16 bg-brand-accent relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, white 2px, transparent 2px); background-size: 30px 30px;"></div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-2/3 reveal">
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">貨不對辦，先行賠付</h3>
+                <p class="text-amber-100 opacity-95">Astravo Holdings Limited 提供貿易保險及品質保證，任何品質索償均於 14 個工作天內處理完畢。</p>
+            </div>
+            <div class="mt-6 md:mt-0 md:w-1/3 flex justify-end reveal">
+                <a href="#contact" class="px-6 py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition shadow-lg">獲取報價</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="font-serif text-3xl font-bold text-center text-brand-dark mb-12 reveal">常見問題</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-accent mr-2"></i> 最小訂單量（MOQ）是多少？</h4>
+                    <p class="text-gray-600">視乎產品類別，一般電子產品 MOQ 為 500 件起，消費品為 1,000 件起。我們亦可安排試單及拼櫃服務，助您以低成本測試市場反應。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-accent mr-2"></i> 支援哪些付款方式？</h4>
+                    <p class="text-gray-600">我們接受信用證（L/C）、電匯（T/T）、付款交單（D/P）及阿里巴巴信保等多元結算方式。長期合作客戶可申請月結信用額度。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm reveal">
+                    <h4 class="font-bold text-lg mb-2 text-gray-800"><i class="far fa-question-circle text-brand-accent mr-2"></i> 如何查詢訂單進度？</h4>
+                    <p class="text-gray-600">每位客戶均有專屬貿易專員，可透過電郵、WhatsApp 或登入客戶系統 astravoholdings.bond 查詢生產、驗貨及物流節點的實時狀態。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-brand-deep relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-transparent"></div>
+        <div class="container mx-auto px-6 text-center relative z-10 text-white">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">準備好拓展環球市場了嗎？</h2>
+            <p class="text-xl text-gray-100 mb-10">立即聯絡Astravo Holdings Limited貿易團隊，獲取免費採購及物流諮詢。</p>
+            <a href="#contact" class="inline-block px-10 py-4 bg-brand-gold text-brand-deep font-bold rounded-full shadow-xl hover:bg-amber-500 transform hover:scale-105 transition duration-300">
+                免費詢盤報價
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer id="contact" class="bg-brand-dark text-gray-200 pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <h3 class="font-serif text-white text-2xl font-bold mb-6">Astravo Holdings Limited</h3>
+                    <p class="mb-6 text-sm leading-relaxed">
+                        以誠信連結環球商機，Astravo Holdings Limited 期望成為您拓展國際市場最值得信賴的貿易夥伴。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-deep flex items-center justify-center hover:bg-brand-gold hover:text-brand-deep transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-deep flex items-center justify-center hover:bg-brand-gold hover:text-brand-deep transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-brand-deep flex items-center justify-center hover:bg-brand-gold hover:text-brand-deep transition"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">快速連結</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-brand-gold transition">首頁</a></li>
+                        <li><a href="#about" class="hover:text-brand-gold transition">關於我們</a></li>
+                        <li><a href="#services" class="hover:text-brand-gold transition">貿易服務</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition">產品目錄</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition">加入我們</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">聯絡方式</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-gold"></i>
+                            <span>Rm 4 16/F WAI WAH COML CTR 6 WILMER ST</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-brand-gold"></i>
+                            <a href="mailto:contact@astravoholdings.bond" class="hover:text-white transition">contact@astravoholdings.bond</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-brand-gold"></i>
+                            <a href="tel:85059141" class="hover:text-white transition text-lg font-bold">85059141</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-globe mr-3 text-brand-gold"></i>
+                            <span>astravoholdings.bond</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">詢盤報價</h4>
+                    <form onsubmit="event.preventDefault(); alert('感謝您的詢盤，貿易專員會於24小時內回覆！');" class="space-y-3">
+                        <input type="text" placeholder="您的稱呼" class="w-full bg-brand-deep border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-gold outline-none text-sm">
+                        <input type="text" placeholder="聯絡電話 / 電郵" class="w-full bg-brand-deep border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-gold outline-none text-sm">
+                        <textarea placeholder="產品及數量需求" rows="3" class="w-full bg-brand-deep border border-white/10 rounded py-3 px-4 text-white focus:ring-2 focus:ring-brand-gold outline-none text-sm"></textarea>
+                        <button type="submit" class="w-full bg-brand-gold text-brand-deep font-bold py-3 rounded hover:bg-amber-500 transition">提交詢盤</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2026 Astravo Holdings Limited 版權所有</p>
+                <div class="mt-4 md:mt-0 space-x-6">
+                    <a href="#" class="hover:text-brand-gold">私隱政策</a>
+                    <a href="#" class="hover:text-brand-gold">服務條款</a>
+                    <a href="#" class="hover:text-brand-gold">貿易條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" id="backToTop" class="fixed bottom-8 right-8 bg-brand-gold text-brand-deep w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform translate-y-20 transition-all duration-300 z-40 hover:bg-amber-500">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-2');
+                navbar.classList.remove('py-5');
+                backToTop.classList.remove('translate-y-20');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-2');
+                navbar.classList.add('py-5');
+                backToTop.classList.add('translate-y-20');
+            }
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.querySelector('.counter') && !entry.target.dataset.counted) {
+                        startCounters(entry.target);
+                        entry.target.dataset.counted = true;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function startCounters(section) {
+            const counters = section.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        document.querySelector('.fa-bars')?.parentElement?.addEventListener('click', () => {
+            alert('移動端菜單點擊 (此處可擴展側邊欄邏輯)');
+        });
+    </script>
+</body>
+</html>
